@@ -1,13 +1,15 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 13:55:14
-* Update at : 2024-05-06 17:47:12
+* Update at : 2024-05-06 19:19:25
 */
 
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'data/dummy_data.dart';
 import 'screens/categories.dart';
+import 'screens/meals.dart';
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -29,7 +31,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home: const CategoriesScreen(),
+      home: const MealsScreen(
+        title: 'Some category...',
+        meals: dummyMeals,
+      ),
     );
   }
 }
