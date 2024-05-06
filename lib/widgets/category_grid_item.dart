@@ -1,7 +1,7 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 18:39:30
-* Update at : 2024-05-06 18:55:40
+* Update at : 2024-05-06 19:43:44
 */
 
 import 'package:flutter/material.dart';
@@ -12,14 +12,16 @@ class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({
     super.key,
     required this.category,
+    required this.onSelectCategory,
   });
 
   final Category category;
+  final void Function() onSelectCategory;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onSelectCategory,
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(16),
       child: Container(
