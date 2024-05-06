@@ -1,7 +1,7 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 19:26:06
-* Update at : 2024-05-06 20:29:04
+* Update at : 2024-05-06 20:45:42
 */
 
 import 'package:flutter/material.dart';
@@ -15,16 +15,19 @@ class MealsScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.meals,
+    required this.onToggleFavorite,
   });
 
   final String? title;
   final List<Meal> meals;
+  final void Function(Meal meal) onToggleFavorite;
 
   void selectMeal(BuildContext context, Meal meal) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => MealDetailsScreen(
           meal: meal,
+          onToggleFavorite: onToggleFavorite,
         ),
       ),
     );
