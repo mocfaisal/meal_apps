@@ -1,7 +1,7 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 20:27:56
-* Update at : 2024-05-06 20:57:30
+* Update at : 2024-05-06 21:06:04
 */
 
 import 'package:flutter/material.dart';
@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '/models/meal.dart';
 import '/screens/categories.dart';
 import '/screens/meals.dart';
+import '/widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -73,6 +74,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(activePageTitle),
       ),
+      drawer: const MainDrawer(),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
