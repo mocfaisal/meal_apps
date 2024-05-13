@@ -1,12 +1,13 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 13:55:14
-* Update at : 2024-05-06 20:31:35
+* Update at : 2024-05-12 00:43:59
 */
 
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '/screens/tabs.dart';
 
 final theme = ThemeData(
@@ -19,7 +20,11 @@ final theme = ThemeData(
 );
 
 void main() {
-  runApp(const App());
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }
 
 class App extends StatelessWidget {
