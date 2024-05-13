@@ -1,7 +1,7 @@
 /*
 * Create by : Mochammad Faisal
 * Create at : 2024-05-06 17:47:03
-* Update at : 2024-05-13 19:55:23
+* Update at : 2024-05-13 20:02:38
 */
 
 import 'package:flutter/material.dart';
@@ -86,11 +86,18 @@ class _CategoriesScreenState extends State<CategoriesScreen>
             )
         ],
       ),
-      builder: (context, child) => Padding(
-          padding: EdgeInsets.only(
-            top: 100 - _animationController.value * 100,
+      builder: (context, child) => SlideTransition(
+        position: Tween(
+          begin: const Offset(0, 0.3),
+          end: const Offset(0, 0),
+        ).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Curves.easeInOut,
           ),
-          child: child),
+        ),
+        child: child,
+      ),
     );
   }
 }
